@@ -7,7 +7,7 @@ const Card = (props) => {
       <img src="" alt="" className="card-img-top"/>
       <div className="card-body">
         <h5 className="card-title">React JS</h5>
-          <Link className="btn btn-primary" to={"/profile/" + 'react'}>Открыть</Link>
+          <Link className="btn btn-primary" to={"/profile/"}>Открыть</Link>
       </div>
     </div>
   );
