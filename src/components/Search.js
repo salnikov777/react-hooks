@@ -1,10 +1,11 @@
 import React, {useContext, useState} from "react";
 import {AlertContext} from "../context/alert/alertContext";
+import {GithubContext} from "../context/github/githubContext";
 
 const Search = (props) => {
   const [value, setValue] = useState('')
-
   const {show} = useContext(AlertContext)
+  const github = useContext(GithubContext)
 
   const onSubmit = (event) => {
     if (event.key !== 'Enter') {
@@ -12,7 +13,7 @@ const Search = (props) => {
     }
 
     if(value.trim()){
-      console.log('Make request with:', value);
+      github.search(value.trim())
     }else{
       show('Введите данные пользователя!')
     }
